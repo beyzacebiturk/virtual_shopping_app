@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:virtual_shopping_app/items_upload_screen.dart';
 
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -22,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
               letterSpacing: 2,
               fontWeight: FontWeight.bold,
               color: Colors.pink,
+
             )
             ),
         actions: [
