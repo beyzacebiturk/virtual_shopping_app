@@ -224,13 +224,57 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
   }
 
   //default screen
+  Widget defaultScreen()
+  {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black12,
+        title: const Text(
+          "Yeni Ürün Ekle",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              Icons.add_photo_alternate,
+              color: Colors.white,
+              size: 200,
+            ),
+            ElevatedButton(
+              onPressed: ()
+                  {
+
+                  },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black54,
+              ),
+              child: const Text(
+                "Yeni Ürün Ekle",
+                style: TextStyle(
+                  color: Colors.white70,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+
+  }
 
 
 
   @override
   Widget build(BuildContext context)
   {
-    return uploadFormScreen();
+    return defaultScreen();
   }
 
 }
