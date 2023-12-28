@@ -15,8 +15,8 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
   TextEditingController sellerNameTextEditingController=TextEditingController();
   TextEditingController sellerPhoneTextEditingController=TextEditingController();
   TextEditingController itemNameTextEditingController=TextEditingController();
-  TextEditingController sellerDescriptionTextEditingController=TextEditingController();
-  TextEditingController sellerPriceTextEditingController=TextEditingController();
+  TextEditingController itemDescriptionTextEditingController=TextEditingController();
+  TextEditingController itemPriceTextEditingController=TextEditingController();
 
 
   bool  isUploading= false;
@@ -51,6 +51,24 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
             color: Colors.pink,
           ),
         ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: IconButton(
+                onPressed:()
+                    {
+
+                    },
+                icon: const Icon(
+                Icons.cloud_upload,
+                color: Colors.white,
+    )
+
+
+            ),
+          ),
+
+        ],
       ),
       body: ListView(
         children: [
@@ -99,7 +117,103 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
           const Divider(
             color: Colors.pinkAccent,
             thickness: 1,
-          )
+          ),
+
+
+          //satıcı telefonu
+          ListTile (
+            leading: const Icon(
+              Icons.phone_iphone_rounded,
+              color: Colors.white,
+            ),
+            title:SizedBox(
+              width: 250,
+              child: TextField(
+                style: const TextStyle(color: Colors.pinkAccent),
+                controller: sellerPhoneTextEditingController,
+                decoration: const InputDecoration(
+                    hintText: "Satıcı Telefonu",
+                    hintStyle:  TextStyle(color: Colors.pinkAccent)
+                ),
+              ),
+            ) ,
+          ),
+          const Divider(
+            color: Colors.pinkAccent,
+            thickness: 1,
+          ),
+
+
+          //ürün adı
+          ListTile (
+            leading: const Icon(
+              Icons.title,
+              color: Colors.white,
+            ),
+            title:SizedBox(
+              width: 250,
+              child: TextField(
+                style: const TextStyle(color: Colors.pinkAccent),
+                controller: itemNameTextEditingController,
+                decoration: const InputDecoration(
+                    hintText: "Ürün Adı",
+                    hintStyle:  TextStyle(color: Colors.pinkAccent)
+                ),
+              ),
+            ) ,
+          ),
+          const Divider(
+            color: Colors.pinkAccent,
+            thickness: 1,
+          ),
+
+
+          //ürün açıklaması
+          ListTile (
+            leading: const Icon(
+              Icons.description,
+              color: Colors.white,
+            ),
+            title:SizedBox(
+              width: 250,
+              child: TextField(
+                style: const TextStyle(color: Colors.pinkAccent),
+                controller: itemDescriptionTextEditingController,
+                decoration: const InputDecoration(
+                    hintText: "Ürün Açıklaması",
+                    hintStyle:  TextStyle(color: Colors.pinkAccent)
+                ),
+              ),
+            ) ,
+          ),
+          const Divider(
+            color: Colors.pinkAccent,
+            thickness: 1,
+          ),
+
+
+          //ürün fiyatı
+          ListTile (
+            leading: const Icon(
+              Icons.price_change,
+              color: Colors.white,
+            ),
+            title:SizedBox(
+              width: 250,
+              child: TextField(
+                style: const TextStyle(color: Colors.pinkAccent),
+                controller: itemPriceTextEditingController,
+                decoration: const InputDecoration(
+                    hintText: "Ürün Fiyatı",
+                    hintStyle:  TextStyle(color: Colors.pinkAccent)
+                ),
+              ),
+            ) ,
+          ),
+          const Divider(
+            color: Colors.pinkAccent,
+            thickness: 1,
+          ),
 
 
 
@@ -108,6 +222,11 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
     );
 
   }
+
+  //default screen
+
+
+
   @override
   Widget build(BuildContext context)
   {
