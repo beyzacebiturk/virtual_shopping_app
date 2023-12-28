@@ -9,11 +9,30 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Virtual Shop" //burayı değiştirip marka adı koyulacak
+        title: const Text("Virtual Shop", //burayı değiştirip marka adı koyulacak
+            style: TextStyle(
+
+              fontSize: 18,
+              letterSpacing: 2,
+              fontWeight: FontWeight.bold,
+            )
             ),
+        actions: [
+          IconButton(
+            onPressed: ()
+            {
+
+            },
+            icon: const Icon(
+              Icons.add,
+              color: Colors.pink,
+            ),
+          )
+        ],
       ),
     );
   }
