@@ -250,7 +250,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
             ElevatedButton(
               onPressed: ()
                   {
-
+                    showDialogBox();
                   },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black54,
@@ -267,6 +267,69 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
       ),
     );
 
+  }
+
+
+  showDialogBox()
+  {
+    return showDialog(
+      context: context,
+      builder: (c)
+        {
+          return SimpleDialog(
+            backgroundColor:  Colors.black,
+              title: const Text(
+                "Ürün Fotoğrafı",
+                style:  TextStyle(
+                  color: Colors.white70,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            children: [
+              SimpleDialogOption(
+                onPressed: ()
+                    {
+
+                    },
+                child:  const Text(
+                  "Kamere ile yükle",
+                  style:  TextStyle(
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+
+              SimpleDialogOption(
+                onPressed: ()
+                {
+
+                },
+                child:  const Text(
+                  "Galeriden Seç",
+                  style:  TextStyle(
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+
+              SimpleDialogOption(
+                onPressed: ()
+                {
+                  Navigator.pop(context);
+                },
+                child:  const Text(
+                  "İptal Et",
+                  style:  TextStyle(
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+
+
+            ],
+          );
+        }
+    );
   }
 
 
