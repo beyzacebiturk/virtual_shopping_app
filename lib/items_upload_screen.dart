@@ -337,6 +337,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
 
   captureImageWithPhoneCamera() async
   {
+    Navigator.pop(context);
     try
         {
           final pickedImage= await ImagePicker().pickImage(source: ImageSource.camera);
@@ -367,6 +368,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
 
   chooseImageFromPhoneGallery() async
   {
+    Navigator.pop(context);
 
     try
     {
