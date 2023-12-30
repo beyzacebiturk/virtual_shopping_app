@@ -14,7 +14,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context)
   {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
+      backgroundColor: Colors.black,
         title: const Text("Virtual Shop", //burayı değiştirip marka adı koyulacak
 
             style: TextStyle(

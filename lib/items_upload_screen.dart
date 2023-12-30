@@ -1,6 +1,8 @@
+import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 class ItemsUploadScreen extends StatefulWidget
 {
   @override
@@ -289,7 +291,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
               SimpleDialogOption(
                 onPressed: ()
                     {
-
+                        captureImageWithPhoneCamera();
                     },
                 child:  const Text(
                   "Kamere ile yükle",
@@ -302,7 +304,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
               SimpleDialogOption(
                 onPressed: ()
                 {
-
+                   chooseImageFromPhoneGallery();
                 },
                 child:  const Text(
                   "Galeriden Seç",
@@ -333,11 +335,73 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
   }
 
 
+  captureImageWithPhoneCamera() async
+  {
+    try
+        {
+          final pickedImage= await ImagePicker().pickImage(source: ImageSource.camera);
+
+          if (pickedImage!=null)
+            {
+              String imagePath=pickedImage.path;
+              imageFileUint8List = await pickedImage.readAsBytes();
+
+              //resimden arka planı kaldır
+              //resmi şeffaf yap
+
+              setState(() {
+                imageFileUint8List;
+              });
+            }
+        }
+        catch(errorMsg)
+        {
+          print(errorMsg.toString());
+
+          setState(() {
+            imageFileUint8List= null;
+          });
+        }
+
+  }
+
+  chooseImageFromPhoneGallery() async
+  {
+
+    try
+    {
+      final pickedImage= await ImagePicker().pickImage(source: ImageSource.gallery);
+
+      if (pickedImage!=null)
+      {
+        String imagePath=pickedImage.path;
+        imageFileUint8List = await pickedImage.readAsBytes();
+
+        //resimden arka planı kaldır
+        //resmi şeffaf yap
+
+        setState(() {
+          imageFileUint8List;
+        });
+      }
+    }
+    catch(errorMsg)
+    {
+      print(errorMsg.toString());
+
+      setState(() {
+        imageFileUint8List= null;
+      });
+    }
+
+  }
+
+
 
   @override
   Widget build(BuildContext context)
   {
-    return defaultScreen();
+    return imageFileUint8List== null ? defaultScreen(): uploadFormScreen();
   }
 
 }
