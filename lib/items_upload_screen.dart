@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:virtual_shopping_app/api_consumer.dart';
 class ItemsUploadScreen extends StatefulWidget
 {
   @override
@@ -349,6 +350,8 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
 
               //resimden arka planı kaldır
               //resmi şeffaf yap
+             imageFileUint8List = await ApiConsumer().removeImageBackgroundApi(imagePath);
+
 
               setState(() {
                 imageFileUint8List;
@@ -381,6 +384,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
 
         //resimden arka planı kaldır
         //resmi şeffaf yap
+        imageFileUint8List = await ApiConsumer().removeImageBackgroundApi(imagePath);
 
         setState(() {
           imageFileUint8List;
