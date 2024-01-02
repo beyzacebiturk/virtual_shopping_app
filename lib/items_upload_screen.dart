@@ -1,9 +1,10 @@
 import 'dart:math';
 import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:virtual_shopping_app/api_consumer.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
 class ItemsUploadScreen extends StatefulWidget
 {
   @override
@@ -60,7 +61,11 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
             child: IconButton(
                 onPressed:()
                     {
-
+                      //validate upload form fields
+                      if (isUploading!=true) //false
+                        {
+                          validateUploadFormAndUploadItemInfo();
+                        }
                     },
                 icon: const Icon(
                 Icons.cloud_upload,
@@ -224,6 +229,37 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
       ),
     );
 
+  }
+
+
+  validateUploadFormAndUploadItemInfo()
+  {
+    if(imageFileUint8List!=null)
+      {
+        if(sellerNameTextEditingController.text.isNotEmpty
+            && sellerPhoneTextEditingController.text.isNotEmpty
+            && itemNameTextEditingController.text.isNotEmpty
+            && itemDescriptionTextEditingController.text.isNotEmpty
+            && itemPriceTextEditingController.text.isNotEmpty  )
+        {
+          setState(() {
+            isUploading= true;
+          });
+
+          //1.upload image
+
+          //2.item info to firestore
+
+        }
+        else
+        {
+          Fluttertoast.showToast(msg: "Lütfen yükleme formunu doldurun. Her alan zorunludur.");
+        }
+      }
+    else
+    {
+      Fluttertoast.showToast(msg: "Lütfen bir görüntü dosyası seçin.");
+    }
   }
 
   //default screen
