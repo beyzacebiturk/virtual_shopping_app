@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:virtual_shopping_app/api_consumer.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:firebase_storage/firebase_storage.dart' as fStorage;
 
 class ItemsUploadScreen extends StatefulWidget
 {
@@ -24,6 +25,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
 
 
   bool  isUploading= false;
+  String downloadUrlOfUploadedImage= "";
 
 
 
@@ -232,7 +234,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
   }
 
 
-  validateUploadFormAndUploadItemInfo()
+  validateUploadFormAndUploadItemInfo() async
   {
     if(imageFileUint8List!=null)
       {
@@ -246,9 +248,23 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen>
             isUploading= true;
           });
 
-          //1.upload image
+          //1.upload image to cloud storage
 
-          //2.item info to firestore
+          String imageUniqueName= DateTime.now().millisecondsSinceEpoch.toString();
+
+          fStorage.Reference firebaseStorageRef= fStorage.FirebaseStorage.instance.ref()
+              .child("Ürün Dosyası")
+              .child(imageUniqueName);
+
+          fStorage.UploadTask uploadTaskImageFile= firebaseStorageRef.putData(imageFileUint8List!);
+
+          fStorage.TaskSnapshot taskSnapshot = await uploadTaskImageFile.whenComplete(() {});
+          await taskSnapshot.ref.getDownloadURL().then((imageDownloadUrl)
+          {
+           downloadUrlOfUploadedImage = imageDownloadUrl;
+          });
+
+          //2.save item info to firestore database
 
         }
         else
