@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:virtual_shopping_app/firebase_options.dart';
 import 'package:virtual_shopping_app/home_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -14,7 +19,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Virtual Shopping App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 236, 144, 175)),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(255, 236, 144, 175)),
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,

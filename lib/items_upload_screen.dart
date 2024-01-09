@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'dart:typed_data';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -228,7 +229,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
         fStorage.Reference firebaseStorageRef = fStorage
             .FirebaseStorage.instance
             .ref()
-            .child("Ürün Dosyası")
+            .child("Items Images")
             .child(imageUniqueName);
 
         fStorage.UploadTask uploadTaskImageFile =
@@ -236,6 +237,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
 
         fStorage.TaskSnapshot taskSnapshot =
             await uploadTaskImageFile.whenComplete(() {});
+
         await taskSnapshot.ref.getDownloadURL().then((imageDownloadUrl) {
           downloadUrlOfUploadedImage = imageDownloadUrl;
         });
@@ -255,7 +257,11 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
   {
     String itemUniqueId = DateTime.now().millisecondsSinceEpoch.toString();
 
-     FirebaseFirestore.instance.collection("items").doc(itemUniqueId).set({
+     FirebaseFirestore.instance
+     .collection("items")
+     .doc(itemUniqueId)
+     .set(
+      {
           "Ürün ID": itemUniqueId,
           "Ürün Adı": itemNameTextEditingController.text,
           "Ürün Tanımı": itemDescriptionTextEditingController.text,

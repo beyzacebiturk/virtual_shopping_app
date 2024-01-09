@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "295047297313",
+    "project_id": "virtualshopping-6918d",
+    "storage_bucket": "virtualshopping-6918d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295047297313:android:cce212c7f8a48b78a0a660",
+        "android_client_info": {
+          "package_name": "com.example.virtualshoppingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGEOLGXy4BtHwJOpVTwJFLHFiqI6XUJhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
