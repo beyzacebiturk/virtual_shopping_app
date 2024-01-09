@@ -266,6 +266,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
           "Ürün Adı": itemNameTextEditingController.text,
           "Ürün Tanımı": itemDescriptionTextEditingController.text,
           "Ürün Görseli": downloadUrlOfUploadedImage,
+          "Ürün Fiyatı": itemPriceTextEditingController.text,
           "Satıcı Adı": sellerNameTextEditingController.text,
           "Satıcı tel": sellerPhoneTextEditingController.text,
           "Yayınlanma Tarihi": DateTime.now(),
