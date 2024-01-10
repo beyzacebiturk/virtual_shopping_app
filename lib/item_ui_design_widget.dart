@@ -52,7 +52,7 @@ class _ItemUIDesignWigetState extends State<ItemUIDesignWiget> {
                         widget.itemsInfo!.itemName.toString(),
                         maxLines: 2,
                         style: const TextStyle(
-                            color: Colors.white70,
+                            color: Colors.pink,
                             fontSize: 16,
                           )
                         ),
@@ -74,14 +74,29 @@ class _ItemUIDesignWigetState extends State<ItemUIDesignWiget> {
                       ),
 
                       const SizedBox(
+                        height: 5.0,
+                      ),
+                      //item description
+                       Expanded(
+                      child: Text(
+                        widget.itemsInfo!.itemDescription.toString(),
+                        maxLines: 2,
+                        style: const TextStyle(
+                            color: Colors.pinkAccent,
+                            fontSize: 14,
+                          )
+                        ),
+                      ),
+
+                      const SizedBox(
                         height: 20.0,
                       ),
-                      //show discount badge - %50 OFF badge
+                      //show discount badge - %50 indirim
                       //price original
                       // new price
                       Row(
                         children: [
-                          //%50 OFF badge
+                          //%50 indirim
                           Container(
                             decoration: const BoxDecoration(
                               shape: BoxShape.rectangle,
@@ -106,7 +121,7 @@ class _ItemUIDesignWigetState extends State<ItemUIDesignWiget> {
 
 
                                   Text(
-                                    "OFF", 
+                                    "INDIRIM", 
                                     style: TextStyle(
                                       fontSize: 12.0,
                                       color: Colors.white,
@@ -176,7 +191,7 @@ class _ItemUIDesignWigetState extends State<ItemUIDesignWiget> {
                               style: const TextStyle(
                                 fontSize: 16,
                                 color: Colors.red,
-                                decoration: TextDecoration.lineThrough,
+                                
                               ),
                             ),
                               ],

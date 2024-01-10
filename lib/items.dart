@@ -29,8 +29,8 @@ class Items {
     itemDescription = json["Ürün Tanımı"];
     itemImage = json["Ürün Görseli"];
     sellerName = json["Satıcı Adı"];
-    sellerPhone = json["Satıcı Tel"];
-    itemPrice = json["Ürün Fiyat"];
+    sellerPhone = json["Satıcı tel"];
+    itemPrice = json["Ürün Fiyatı"];
     publishedDate = json["Yayınlanma Tarihi"];
     status = json["Durum"];
   }

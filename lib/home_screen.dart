@@ -16,9 +16,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromARGB(255, 246, 212, 224),
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromARGB(255, 247, 145, 179),
         title:
             const Text("Virtual Shop", //burayı değiştirip marka adı koyulacak
 
@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontSize: 18,
                   letterSpacing: 2,
                   fontWeight: FontWeight.bold,
-                  color: Colors.pink,
+                  color: Color.fromARGB(255, 255, 255, 255),
                 )),
         actions: [
           IconButton(
