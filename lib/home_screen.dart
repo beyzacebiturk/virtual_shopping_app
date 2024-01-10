@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             icon: const Icon(
               Icons.add,
-              color: Colors.pink,
+              color: Colors.white,
             ),
           )
         ],

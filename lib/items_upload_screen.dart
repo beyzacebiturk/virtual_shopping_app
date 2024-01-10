@@ -33,13 +33,13 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
 
   Widget uploadFormScreen() {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromARGB(255, 246, 212, 224),
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromARGB(255, 247, 145, 179),
         title: const Text(
           "Upload New Item",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.pink,
           ),
         ),
         centerTitle: true,
@@ -49,7 +49,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
           },
           icon: const Icon(
             Icons.arrow_back_rounded,
-            color: Colors.pink,
+            color: Colors.white,
           ),
         ),
         actions: [
@@ -65,7 +65,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
                 },
                 icon: const Icon(
                   Icons.cloud_upload,
-                  color: Colors.white,
+                  color: Colors.pink,
                 )),
           ),
         ],
@@ -286,13 +286,14 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
   //default screen
   Widget defaultScreen() {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor:  Color.fromARGB(255, 246, 212, 224),
       appBar: AppBar(
-        backgroundColor: Colors.black12,
+        backgroundColor: Color.fromARGB(255, 247, 145, 179),
         title: const Text(
           "Yeni Ürün Ekle",
           style: TextStyle(
             color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: true,
@@ -311,12 +312,12 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
                 showDialogBox();
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black54,
+                backgroundColor: Color.fromARGB(255, 247, 145, 179),
               ),
               child: const Text(
                 "Yeni Ürün Ekle",
                 style: TextStyle(
-                  color: Colors.white70,
+                  color: Colors.white,
                 ),
               ),
             ),
