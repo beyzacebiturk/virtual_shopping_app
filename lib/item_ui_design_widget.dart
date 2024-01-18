@@ -60,13 +60,19 @@ class _ItemUIDesignWigetState extends State<ItemUIDesignWiget> {
                       height: 5.0,
                     ),
                     //seller name
-                    Expanded(
-                      child: Text(widget.itemsInfo!.sellerName.toString(),
-                          maxLines: 2,
-                          style: const TextStyle(
-                            color: Colors.pinkAccent,
-                            fontSize: 14,
-                          )),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(widget.itemsInfo!.sellerName.toString(),
+                              maxLines: 2,
+                              style: const TextStyle(
+                                color: Colors.pinkAccent,
+                                fontSize: 14,
+                              )),
+                        ),
+                        const SizedBox(width: 5),
+                        Icon(Icons.perm_identity, size: 20), // Added Instagram icon
+                      ],
                     ),
 
                     const SizedBox(

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:virtual_shopping_app/firebase_options.dart';
 import 'package:virtual_shopping_app/home_screen.dart';
+import 'package:virtual_shopping_app/items_upload_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:virtual_shopping_app/my_home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform);
+      options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home: MyHomePage(),
     );
   }
 }

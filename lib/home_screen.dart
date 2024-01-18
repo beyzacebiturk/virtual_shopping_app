@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: Color.fromARGB(255, 255, 255, 255),
                 )),
         actions: [
-          IconButton(
+         /* IconButton(
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (c) => ItemsUploadScreen()));
@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Icons.add,
               color: Colors.white,
             ),
-          )
+          )*/
         ],
       ),
       body: StreamBuilder(
@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Center(
                     child: Text(
-                      "Veri uygun değil.",
+                      "",
                       style: TextStyle(
                         fontSize: 30,
                         color: Colors.grey,

@@ -12,6 +12,7 @@ import 'package:virtual_shopping_app/home_screen.dart';
 class ItemsUploadScreen extends StatefulWidget {
   @override
   State<ItemsUploadScreen> createState() => _ItemsUploadScreenState();
+
 }
 
 class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
