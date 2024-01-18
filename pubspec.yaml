@@ -43,6 +43,7 @@ dependencies:
   firebase_core: ^2.24.2
   firebase_auth: ^4.16.0
   augmented_reality_plugin: ^4.0.1
+  flutter_web_auth: ^0.4.1
   
 
 dev_dependencies:

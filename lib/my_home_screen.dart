@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:virtual_shopping_app/home_screen.dart';
+import 'package:virtual_shopping_app/inst_login.dart';
 import 'package:virtual_shopping_app/items_upload_screen.dart';
 
+// Main class
 class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+// State class
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 246, 212, 224),
+      backgroundColor: Color.fromARGB(255, 247, 145, 179),
       appBar: AppBar(
         title: Text('Virtual Shop', style: TextStyle(color: Colors.pink)),
       ),
@@ -22,13 +25,13 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.remove_red_eye_rounded, size: 30),
+                Icon(Icons.remove_red_eye_rounded, size: 30, color: Colors.white70),
                 SizedBox(width: 10),
                 Text(
                   'Ürünleri Görüntüle',
-                  style: TextStyle(fontSize: 20),
-                ),  // Added missing closing parenthesis here
-                SizedBox(height: 20),  // Moved inside the Row
+                  style: TextStyle(fontSize: 20, color: Colors.white70),
+                ),
+                SizedBox(height: 20),
               ],
             ),
             ElevatedButton(
@@ -42,21 +45,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPrimary: Colors.white),
             ),
             SizedBox(height: 20),
-            Row( // Added Row for icon and text
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.image_outlined, size: 30), // Added icon
+                Icon(Icons.image_outlined, size: 30, color: Colors.white70),
                 SizedBox(width: 10),
                 Text(
                   'Ürün Yükle',
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 20, color: Colors.white70),
                 ),
               ],
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (c) => ItemsUploadScreen()));
+                    MaterialPageRoute(builder: (c) => InstagramLoginScreen()));
               },
               child: Text('Yükle'),
               style: ElevatedButton.styleFrom(
