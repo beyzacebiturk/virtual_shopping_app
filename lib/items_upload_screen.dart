@@ -38,9 +38,9 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 247, 145, 179),
         title: const Text(
-          "Upload New Item",
+          "Yeni Ürün Ekle",
           style: TextStyle(
-            color: Colors.pink,
+            color: Colors.white,
           ),
         ),
         centerTitle: true,

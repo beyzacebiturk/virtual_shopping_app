@@ -8,7 +8,6 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
-
 // State class
 class _MyHomePageState extends State<MyHomePage> {
   @override
@@ -22,6 +21,16 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+                  // logo
+                  Image.asset(
+                    'assets/images/image.png',
+        color: Colors.pink,
+                      width: 200,
+                      height: 200,
+                     ),
+                     const SizedBox(height: 50),
+            
+                     const SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

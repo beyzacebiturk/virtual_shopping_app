@@ -707,6 +707,8 @@ PODS:
     - FirebaseCoreExtension (~> 10.0)
     - GTMSessionFetcher/Core (< 4.0, >= 2.1)
   - Flutter (1.0.0)
+  - flutter_web_auth (0.4.3):
+    - Flutter
   - fluttertoast (0.0.2):
     - Flutter
     - Toast
@@ -806,6 +808,7 @@ DEPENDENCIES:
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_storage (from `.symlinks/plugins/firebase_storage/ios`)
   - Flutter (from `Flutter`)
+  - flutter_web_auth (from `.symlinks/plugins/flutter_web_auth/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
 
@@ -847,6 +850,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_storage/ios"
   Flutter:
     :path: Flutter
+  flutter_web_auth:
+    :path: ".symlinks/plugins/flutter_web_auth/ios"
   fluttertoast:
     :path: ".symlinks/plugins/fluttertoast/ios"
   image_picker_ios:
@@ -872,6 +877,7 @@ SPEC CHECKSUMS:
   FirebaseSharedSwift: f34eeb7d3ea87a34497629b6ca41657beadef76a
   FirebaseStorage: 8333c4b183764cdd170d9539a61322b71c23adff
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_web_auth: 71382897b8dc10ad94a2928cbb09ddf515749808
   fluttertoast: 31b00dabfa7fb7bacd9e7dbee580d7a2ff4bf265
   GoogleUtilities: 0759d1a57ebb953965c2dfe0ba4c82e95ccc2e34
   "gRPC-C++": 2df8cba576898bdacd29f0266d5236fa0e26ba6a
